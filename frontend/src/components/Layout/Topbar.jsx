@@ -29,8 +29,8 @@ const Topbar = () => {
             </div>
 
             <div className='text-sm'>
-                <a href='+1234567890' className='hover:text-gray-300 hiiden md:block'>
-                    +1 {234} 567-890
+                <a href='+94716675291' className='hover:text-gray-300 hidden md:block'>
+                    +94 {71} 6675-291
                 </a>
 
             </div>

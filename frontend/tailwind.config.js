@@ -8,7 +8,8 @@ export default {
     extend: {
       colors:{
         elegantBlack: '#000000',
-        gold:'#FFD700'
+        gold:'#DAA520',
+        hoverGold:'#B8860B'
       }
     },
   },
