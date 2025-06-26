@@ -1,4 +1,3 @@
-<<<<<<< feature/NewArrivals-section
 import { useEffect, useRef, useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
@@ -26,32 +25,6 @@ const NewArrivals = () => {
             ],
         },
 
-=======
-import React, { use, useEffect } from 'react'
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
-import { Link } from 'react-router-dom'
-
-const NewArrivals = () => {
-    const scrollRef = useRef(null);
-    const [isDragging, setIsDragging] = useState(false);
-    const [startX, setStartX] = useState(0);
-    const [scrollLeft, setScrollLeft] = useState(false);
-    const [canScrollRight, setCanScrollRight] = useState(true);
-
-    const newArrivals = [
-        {
-            _id: '1',
-            name: 'Product 1',
-            price: 29.99,
-            image: [
-                {
-                    url: "https://picsum.photos/500/500?random=1",
-                    altText: "Stylish Jecket"
-                },
-            ],
-        },
-
->>>>>>> main
         {
             _id: '2',
             name: 'Product 2',
@@ -130,7 +103,6 @@ const NewArrivals = () => {
             ],
         },
     ]
-<<<<<<< feature/NewArrivals-section
 
     const handleMouseDown = (e) => {
         setIsDragging(true);
@@ -167,23 +139,17 @@ const NewArrivals = () => {
             setCanScrollRight(rightScrollable);
         }
     };
-=======
->>>>>>> main
 
     useEffect(() => {
         const container = scrollRef.current;
-        if(container){
+        if (container) {
             container.addEventListener("scroll", updateScrollButtons);
+            updateScrollButtons();
+            return () => container.removeEventListener("scroll", updateScrollButtons);
         }
-<<<<<<< feature/NewArrivals-section
-    }, [])
-    return (
-         <section className="py-16 px-4 lg:px-0">
-=======
     })
     return (
-        <section>
->>>>>>> main
+         <section className="py-16 px-4 lg:px-0">
             <div className="container mx-auto text-center mb-10 relative">
                 <h2 className="text-3xl mb-4 font-bold">Explore New Arrivals</h2>
                 <p className="text-gray-600 text-lg mb-8">
@@ -192,7 +158,6 @@ const NewArrivals = () => {
 
                 {/* Scroll Button */}
                 <div className="absolute right-0 bottom-[-30px] flex space-x-2">
-<<<<<<< feature/NewArrivals-section
                     <button
                         onClick={() => scroll("left")}
                         disabled={!canScrollLeft}
@@ -211,20 +176,11 @@ const NewArrivals = () => {
                             }`}
                     >
                         <FiChevronRight className="text-2xl" />
-=======
-                    <button className="p-2 rounded border bg-white text-black">
-                        <FiChevronLeft className='text-2xl' />
                     </button>
-                    <button className="p-2 rounded border bg-white text-black">
-                        <FiChevronRight className='text-2xl' />
->>>>>>> main
-                    </button>
-
                 </div>
             </div>
 
             {/* Scrollable Content */}
-<<<<<<< feature/NewArrivals-section
             <div
                 ref={scrollRef}
                 className={`container mx-auto overflow-x-scroll flex space-x-6 relative ${
@@ -235,9 +191,6 @@ const NewArrivals = () => {
                 onMouseUp={handleMouseUpOrLeave}
                 onMouseLeave={handleMouseUpOrLeave}
             >
-=======
-            <div ref={scrollRef} className="container mx-auto overflow-scroll flex space-x-6 relative">
->>>>>>> main
                 {newArrivals.map((product) => (
                     <div key={product._id} className='min-w-[100%] sm:min-w-[50%] lg:min-w-[30%] relative'>
                         <img
@@ -260,8 +213,4 @@ const NewArrivals = () => {
     )
 }
 
-<<<<<<< feature/NewArrivals-section
 export default NewArrivals
-=======
-export default NewArrivals
->>>>>>> main
