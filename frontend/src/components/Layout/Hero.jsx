@@ -1,5 +1,5 @@
 import React from 'react'
-import heroImg from '../../assets/trendora-hero.webp'
+import heroImg from '../../assets/heroNew.png'
 import { Link } from 'react-router-dom'
 
 const Hero = () => {
