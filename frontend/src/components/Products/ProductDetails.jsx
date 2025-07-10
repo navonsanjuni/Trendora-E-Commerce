@@ -25,6 +25,10 @@ const selectedProduct = {
 const ProductDetails = () => {
 
   const [mainImage, setMainImage] = useState("");
+  const [selectedSize, setSelectedSize] = useState("");
+  const [selectedColor, setSelectedColor] = useState("");
+  const [quantity, setQuantity] = useState(1);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
   useEffect(() => {
     if(selectedProduct?.images?.length>0){
@@ -106,7 +110,12 @@ const ProductDetails = () => {
                   {selectedProduct.colors.map((color) => (
                     <button
                       key={color}
-                      className="w-8 h-8 rounded-full border"
+                        onClick={() => setSelectedColor(color)}
+                      className={`w-8 h-8 rounded-full border ${
+                        selectedColor === color
+                          ? "border-4 border-black"
+                          : "border-gray-300"
+                      }`}
                       style={{
                         backgroundColor: color.toLocaleLowerCase(),
                         filter: "brightness(0.5)",
@@ -122,7 +131,10 @@ const ProductDetails = () => {
                   {selectedProduct.sizes.map((size) => (
                     <button
                       key={size}
-                      className="px-4 py-2 rounded border"
+                       onClick={() => setSelectedSize(size)}
+                      className={`px-4 py-2 rounded border ${
+                        selectedSize === size ? "bg-black text-white" : ""
+                      }`}
                     >
                       {size}
                     </button>
