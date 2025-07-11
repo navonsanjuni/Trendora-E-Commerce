@@ -197,6 +197,7 @@ const NewArrivals = () => {
                             src={product.image[0]?.url}
                             alt={product.image[0].altText || product.name}
                             className='w-full h-[500px] rounded-lg object-cover'
+                            draggable={false}
                         />
                         <div className="absolute bottom-0 left-0 right-0 bg-opacity-50 backdrop-blur-md text-white p-4 rounded-b-lg">
                             <Link to={`/product/${product._id}`}
